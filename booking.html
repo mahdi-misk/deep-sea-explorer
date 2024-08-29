@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
-
+<html lang="en">
 <head>
     <!-- basic -->
     <meta charset="utf-8">
@@ -8,85 +7,96 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- mobile metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+   
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <title>Dive Club-booking</title>
-    <link rel="icon" href="https://i.pinimg.com/originals/88/33/f2/8833f2811794959bdcc2433a512a7bac.png"
-        type="image/png">
+   
+    <link rel="icon" href="https://i.pinimg.com/originals/88/33/f2/8833f2811794959bdcc2433a512a7bac.png" type="image/png">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
     <link rel="stylesheet" href="fonts/icomoon/style.css">
+
     <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Style -->
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        /* Reset CSS */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
+  <style> 
+     /* Reset CSS */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #C1E8FF;
-            color: #333;
-        }
 
-        /* Header */
-        header {
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #C1E8FF;
+        color: #333;
+        flex-wrap: wrap;
+    }
+    
+    /* Header */
+    header {
             background: #052659;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
+            position: fixed; /* يجعل الهيدر ثابتًا في أعلى الصفحة */
+            width: 100%; /* يجعل عرض الهيدر يمتد على عرض الصفحة بالكامل */
+            z-index: 1000; /* يضمن أن يكون الهيدر فوق جميع العناصر الأخرى */
             padding: 5px 0;
-            top: 0;
-            left: 0;
+            top: 0; /* يحدد المسافة من أعلى الصفحة */
+            left: 0; /* يحدد المسافة من الجانب الأيسر للصفحة */
         }
 
-        .logo img {
-            max-width: 50px;
-            height: auto;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 95%;
-            margin: auto;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-grow: 1;
-        }
-
-        .nav-links li {
-            position: relative;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #C1E8FF;
-            font-size: 20px;
-            padding: 10px 40px;
-            margin-right: 30px;
-        }
-
-        .nav-links a:hover {
-            background: #00b4d8;
-            border-radius: 30px;
-        }
-
+    
+    .logo img {
+        max-width: 50px;
+        height: auto;
+        margin-right: 0px;
+    }
+    
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 95%;
+        margin: auto;
+    }
+    
+    .nav-links {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-grow: 1;
+    }
+    
+    .nav-links li {
+        position: relative;
+    }
+    
+    .nav-links a {
+        text-decoration: none;
+        color: #C1E8FF;
+        font-size: 20px;
+        padding: 10px 40px;
+        margin-right: 30px;
+        transition: background 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+        background: #00b4d8;
+        border-radius: 30px;
+    }
+    
         /* Booking Section */
         .booking-section {
             display: flex;
