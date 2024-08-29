@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dive Club</title>
+    <link rel="icon" href="https://i.pinimg.com/originals/88/33/f2/8833f2811794959bdcc2433a512a7bac.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #C1E8FF;
+            color: #333;
+        }
+        header {
+            background: #052659;
+            padding: 10px;
+            text-align: center;
+        }
+        .logo img {
+            width: 50px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #C1E8FF;
+            padding: 8px 20px;
+            transition: background 0.3s;
+        }
+        nav ul li a:hover {
+            background: #00b4d8;
+            border-radius: 5px;
+        }
+        .booking-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .booking-form {
+            width: 300px;
+            margin: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .booking-form img {
+            width: 100%;
+            cursor: pointer;
+        }
+        .booking-form form {
+            padding: 15px;
+            display: none;
+        }
+        .booking-form.show form {
+            display: block;
+        }
+        .booking-form h2 {
+            margin: 15px 0;
+            color: #052659;
+        }
+        .booking-form input, .booking-form button {
+            width: calc(100% - 30px);
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .booking-form button {
+            background: #052659;
+            color: #fff;
+            cursor: pointer;
+        }
+        .booking-form button:hover {
+            background: #00b4d8;
+        }
+        footer {
+            background: #021024;
+            color: #C1E8FF;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="https://i.pinimg.com/originals/88/33/f2/8833f2811794959bdcc2433a512a7bac.png" alt="Dive Club Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Booking</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="booking-section">
+    <div class="booking-form" onclick="toggleForm(this)">
+        <img src="https://i.pinimg.com/236x/36/f9/c6/36f9c6e9b15c1104375ee7aef7c5ec81.jpg" alt="Click to reveal form">
+        <h2>VR Experience</h2>
+        <form>
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <input type="date" required>
+            <input type="time" required>
+            <button type="submit">Book Now</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <p>© 2024 Dive Club - All Rights Reserved</p>
+</footer>
+
+<script>
+    function toggleForm(element) {
+        element.classList.toggle('show');
+    }
+</script>
+
+</body>
+</html>

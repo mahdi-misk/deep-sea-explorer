@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Deep sea explorer</title>
+
+    <link rel="icon" href="https://i.pinimg.com/originals/88/33/f2/8833f2811794959bdcc2433a512a7bac.png"
+        type="image/png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #C1E8FF;
+            color: #333;
+            flex-wrap: wrap;
+        }
+
+        /* Header */
+        header {
+            background: #052659;
+            position: fixed;
+            /* يجعل الهيدر ثابتًا في أعلى الصفحة */
+            width: 100%;
+            /* يجعل عرض الهيدر يمتد على عرض الصفحة بالكامل */
+            z-index: 1000;
+            /* يضمن أن يكون الهيدر فوق جميع العناصر الأخرى */
+            padding: 5px 0;
+            top: 0;
+            /* يحدد المسافة من أعلى الصفحة */
+            left: 0;
+            /* يحدد المسافة من الجانب الأيسر للصفحة */
+        }
+
+
+        .logo img {
+            max-width: 70px;
+            height: auto;
+            margin-right: 0px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            margin: auto;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #C1E8FF;
+            font-size: 20px;
+            padding: 10px 40px;
+            margin-right: 30px;
+            transition: background 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: #00b4d8;
+            border-radius: 30px;
+        }
+
+        /*-------------------------------------------------------------------------------------------------------------------- */
+
+        /* Hero Section */
+/* Container for the hero sections */
+.hero-container {
+    display: flex; /* عرض العناصر بشكل عمودي */
+    flex-direction: column; /* عرض الفيديوهات في عمود واحد */
+    gap: 10px; /* تحديد المسافة بين الفيديوهات */
+    width: 100%;
+    height: auto;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #C1E8FF;
+    width: 100%; /* ملء عرض الحاوية */
+    height: 100vh; /* ارتفاع الفيديوهات على الشاشات الصغيرة */
+}
+
+.video-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%; /* ملء المساحة المتاحة */
+}
+
+.video-background iframe {
+    width: 80%;
+    height: 80%;
+    pointer-events: none; /* منع التفاعل مع الفيديو */
+    object-fit: cover;
+}
+
+
+        .image-background img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+
+        }
+
+        .hero-content {
+            z-index: 1;
+    display: flex;
+    margin: 30px;
+    flex-wrap: wrap;
+}
+        
+
+        .hero h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+        /* Content Section */
+        .content {
+    text-align: center;
+    background: #C1E8FF;
+    padding-bottom: 50px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    margin-top: 20px;
+    flex-wrap: wrap; /* للسماح بالانتقال إلى سطر جديد عند التصغير */
+}
+
+.card {
+    position: relative;
+    background-color: #021024;
+    padding: 10px;
+    border-radius: 8px;
+    width: 300px;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    height: auto;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.card h3 {
+    color: #C1E8FF;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.card-description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: #052659;
+    color: #C1E8FF;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    text-align: center;
+}
+
+.card:hover .card-description {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+        /*-------------------------------------------------------------------------------------------------------------------- */
+        footer {
+            background: #021024;
+            color: #C1E8FF;
+            padding: 20px 0;
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 80%;
+            margin: auto;
+            gap: 20px;
+        }
+
+        footer h3 {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .contact ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-links ul {
+            list-style: none;
+        }
+
+        .contact li,
+        .menu-links li {
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+
+        .contact a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        .menu-links {
+            width: 100%;
+        }
+
+        .menu-links ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            
+        }
+
+        .menu-links a {
+            display: block;
+            padding: 10px;
+            color: #C1E8FF;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .menu-links a:hover {
+            background: #00b4d8;
+        }
+
+        /*-------------------------------------------------------------------------------------------------------------------- */
+
+        /* Icon Links Section */
+        .icon-links {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* تقليل التباعد بين الرموز */
+    padding: 20px; /* تقليل التباعد الداخلي */
+    flex-wrap: wrap; /* السماح للرموز بالتوزيع على عدة أسطر */
+}
+
+.icon-link {
+    text-decoration: none;
+    color: #333;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.icon-link:hover {
+    color: #0077b6;
+    transform: scale(1.15);
+}
+
+.icon-img {
+    width: 60px; /* تقليل حجم الرموز */
+    height: 60px; /* تقليل حجم الرموز */
+    display: block;
+    margin: 8px; /* تعديل المسافة حول الرموز */
+}
+
+        /* التصميم الافتراضي للبطاقات على شاشات الكمبيوتر */
+@media (min-width: 768px) {
+    .card-container {
+        flex-direction: row; /* عرض البطاقات بشكل أفقي */
+    }
+}
+
+/* التصميم للبطاقات على شاشات الهاتف */
+@media (max-width: 767px) {
+    .card-container {
+        flex-direction: column; /* عرض البطاقات بشكل عمودي */
+        align-items: center; /* توسيط البطاقات أفقياً */
+        gap: 20px; /* تعديل المسافة بين البطاقات عند التصغير */
+    }
+}
+/* التصميم للهواتف */
+@media (max-width: 767px) {
+    .video-background iframe {
+        width: 100%;
+        height: 100%;
+    }}
+
+    @media (max-width: 767px) {
+    .hero-container {
+        flex-direction: column;
+        gap: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .hero {
+        height: 25vh; /* ارتفاع الفيديوهات على الشاشات الكبيرة */
+    }
+}
+/* التصميم للهواتف */
+@media (max-width: 767px) {
+    .icon-links {
+        gap: 20px; /* تقليل التباعد بين الرموز في الشاشات الصغيرة */
+        padding: 10px; /* تقليل التباعد الداخلي */
+    }
+
+    .icon-img {
+        width: 50px; /* تقليل حجم الرموز */
+        height: 50px; /* تقليل حجم الرموز */
+    }
+}
+
+@media (max-width: 767px) {
+    .hero h1 {
+        font-size: 28px; /* تغيير حجم الخط */
+    }
+
+    .hero p {
+        font-size: 16px; /* تغيير حجم الخط */
+    }
+}
+    </style>
+</head>
+
+<body>
+    <div class="site-mobile-menu">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close mt-3">
+                <span class="icon-close2 js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <header class="site-navbar position-sticky" role="banner">
+
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-11 col-xl-2">
+                    <a href="index.html">
+                        <div class="logo">
+                            <img src="https://i.pinimg.com/originals/88/33/f2/8833f2811794959bdcc2433a512a7bac.png"
+                                alt="Dive Club Logo">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+
+                        <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+                            <li><a href="index.html"><span>Home</span></a></li>
+                            <li> <a href="booking.html"><span>booking</span></a></li>
+                            <li><a href="about.html"><span>About</span></a></li>
+                            <li><a href="contact.html"><span>Contact</span></a></li>
+                        </ul>
+                </div>
+                <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a
+                        href="#" class="site-menu-toggle js-menu-toggle text-white"><span
+                            class="icon-menu h3"></span></a></div>
+            </div>
+        </div>
+        </div>
+    </header>
+
+
+    <div class="hero">
+        <div class="image-background">
+            <img src="https://duet-cdn.vox-cdn.com/thumbor/0x0:1920x1059/750x500/filters:focal(864x648:865x649):format(webp)/cdn3.vox-cdn.com/uploads/chorus_asset/file/7747123/raybg.jpg"
+                alt="Dive Club Background">
+        </div>
+
+        <div class="hero-content">
+            <h1>Dive Club.<br>Explore the world.</h1>
+            <p>Join us in discovering the wonders of the underwater world. Your adventure starts here.</p>
+        </div>
+    </div>
+
+
+    <section class="icon-links">
+        <a href="gallery.html" class="icon-link" >
+            <img src="https://i.pinimg.com/originals/94/b8/42/94b84214e16e860d271164979a885af4.png" alt="gallery" class="icon-img">
+        </a>
+        <a href="FAQ.html" class="icon-link" >
+            <img src="https://i.pinimg.com/originals/94/81/a1/9481a1c52a656383028335f1e901b007.png" alt="FAQ" class="icon-img">
+        </a>
+        <a href="booking.html" class="icon-link" >
+            <img src="https://i.pinimg.com/originals/79/07/b2/7907b26d0a90c70f8bf97061eb67e3db.png" alt="booking" class="icon-img">
+        </a>
+    </section>
+
+    <section class="content">
+        <div class="card-container">
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiUyMzEFaRmM2kz0gN0onNqPejgLEXhPoz4g&s"
+                    alt="Divers" width="259" height="194">
+                <h3>Divers</h3>
+                <p class="card-description">Explore the depths with experienced divers.</p>
+            </div>
+            
+            <div class="card">
+                <img src="https://content.instructables.com/FMA/EXHN/KOWWKXG9/FMAEXHNKOWWKXG9.png?auto=webp&fit=bounds&frame=1&height=1024&width=1024auto=webp&frame=1&height=150"
+                    alt="Drone" width="259" height="194">
+                <h3>Drone</h3>
+                <p class="card-description">Discover the underwater world with a drone.</p>
+            </div>
+            <div class="card" style="width: 1920p ; height: 1080p;">
+                <img src="https://images.twinkl.co.uk/tr/raw/upload/u/ux/usawiki-fish-clownfish_ver_1.jpg" alt="Fishes"
+                    width="259" height="194">
+                <h3>Fishes</h3>
+                <p class="card-description">Learn about different species of fishes.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="hero-container">
+        <section class="hero">
+            <div class="video-background">
+                <iframe src="https://www.youtube.com/embed/qv-YblvpRwo?autoplay=1&mute=1&loop=1&playlist=qv-YblvpRwo"
+                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </section>
+    
+        <section class="hero">
+            <div class="video-background">
+                <iframe src="https://www.youtube.com/embed/YFmV_MRSD7M?autoplay=1&mute=1" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
+            </div>
+        </section>
+    </section>
+    
+    <br><br><br><br>
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <div class="contact">
+                <h3>Contact Us</h3>
+                <ul class="contact-list">
+                    <li><i class="fa fa-map-marker" aria-hidden="true"></i> Address</li>
+                    <li><i class="fa fa-mobile" aria-hidden="true"></i> +962 0787139731</li>
+                    <li><i class="fa fa-envelope" aria-hidden="true"></i>
+                        <a href="mailto:celestialsailors9@gmail.com">celestialsailors9@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="menu-links">
+                <h3>Menu Links</h3>
+                <ul class="link-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="booking.html">Booking</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- end footer -->
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
